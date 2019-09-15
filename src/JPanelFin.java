@@ -78,12 +78,12 @@ public class JPanelFin extends JPanel {
 		g.setColor(Color.BLACK);
 		
 		if (this.gagnant()==1) {
-			g.drawString(j1.getNom() + " gagne\n" + pointsGagnant() + " à " + pointsPerdant(), 15, 50);
+			g.drawString(j1.getNom() + " wins\n" + pointsGagnant() + " to " + pointsPerdant(), 15, 50);
 		} else if (this.gagnant()==2) {
-			g.drawString(j2.getNom() + " gagne\n" + pointsGagnant() + " à " + pointsPerdant(), 15, 50);
+			g.drawString(j2.getNom() + " wins\n" + pointsGagnant() + " to " + pointsPerdant(), 15, 50);
 		} else {
 			g.setColor(Color.GRAY);
-			g.drawString("Égalité\n" + pointsGagnant() + " partout", 15, 50);
+			g.drawString("Deuce\n" + pointsGagnant() + " all", 15, 50);
 		}
 	}
 }

@@ -28,13 +28,13 @@ public class JPanelDemandeJoueur extends JPanel implements ActionListener {
 		joueur1 = null;
 		joueur2 = null;
 		
-		texteJ1 = new JLabel("Nom du joueur 1 :");
-		texteJ2 = new JLabel("Nom du joueur 2 :");
+		texteJ1 = new JLabel("Name of player 1 :");
+		texteJ2 = new JLabel("Name of player 2 :");
 		
 		j1 = new JTextField("Pierre",6);
 		j2 = new JTextField("Paul",6);
 		
-		valider = new Bouton("Valider", true);
+		valider = new Bouton("Accept", true);
 		
 		this.setLayout(null);
 		

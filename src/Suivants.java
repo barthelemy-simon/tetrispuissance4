@@ -56,27 +56,27 @@ public class Suivants {
 		} else {
 			g.setFont(new Font("Calibri",Font.PLAIN, 15));
 			g.setColor(Color.BLACK);
-			g.drawString("Aucune autre forme", 10, 20);
-			g.drawString("n'apparaîtra : ", 10, 40);
-			g.drawString("la partie va se terminer", 10, 60);
+			g.drawString("No other shape", 10, 20);
+			g.drawString("will appear: ", 10, 40);
+			g.drawString("the game is going to end", 10, 60);
 		}
 		if (f2 != null) {
 			f2.dessiner(g, 1, echelle);
 		}  else {
 			g.setFont(new Font("Calibri",Font.PLAIN, 15));
 			g.setColor(Color.BLACK);
-			g.drawString("Aucune autre forme", 10, 20 + 4*JPanelSuivants.echelle);
-			g.drawString("n'apparaîtra : ", 10, 40 + 4*JPanelSuivants.echelle);
-			g.drawString("la partie va se terminer", 10, 60 + 4*JPanelSuivants.echelle);
+			g.drawString("No other shape", 10, 20 + 4*JPanelSuivants.echelle);
+			g.drawString("will appear: ", 10, 40 + 4*JPanelSuivants.echelle);
+			g.drawString("the game is going to end", 10, 60 + 4*JPanelSuivants.echelle);
 		}
 		if (f3 != null) {
 			f3.dessiner(g, 2, echelle);
 		} else {
 			g.setFont(new Font("Calibri",Font.PLAIN, 15));
 			g.setColor(Color.BLACK);
-			g.drawString("Aucune autre forme", 10, 20 + 8*JPanelSuivants.echelle);
-			g.drawString("n'apparaîtra : ", 10, 40 + 8*JPanelSuivants.echelle);
-			g.drawString("la partie va se terminer", 10, 60 + 8*JPanelSuivants.echelle);
+			g.drawString("No other shape", 10, 20 + 8*JPanelSuivants.echelle);
+			g.drawString("will appear: ", 10, 40 + 8*JPanelSuivants.echelle);
+			g.drawString("the game is goind to end", 10, 60 + 8*JPanelSuivants.echelle);
 		}
 	}
 	

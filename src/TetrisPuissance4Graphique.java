@@ -3,6 +3,9 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.*;
+import java.awt.im.InputContext;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.JPanel;
 
@@ -24,7 +27,23 @@ public class TetrisPuissance4Graphique extends JPanel implements KeyListener, Mo
 	private Joueur joueur1;
 	private Joueur joueur2;
 	
-	public TetrisPuissance4Graphique(int joueur, Joueur joueur1, Joueur joueur2) {	
+	private boolean keyboard_AZ;
+	private Map<String, Integer> keyboard_conf;
+	
+	
+	public TetrisPuissance4Graphique(int joueur, Joueur joueur1, Joueur joueur2) {
+		
+		keyboard_AZ = InputContext.getInstance().getLocale().toString().equals("fr");
+		keyboard_conf = new HashMap<>();
+		if (keyboard_AZ) {
+			keyboard_conf.put("UP", KeyEvent.VK_Z);
+			keyboard_conf.put("LEFT", KeyEvent.VK_Q);
+		} else {
+			keyboard_conf.put("UP", KeyEvent.VK_W);
+			keyboard_conf.put("LEFT", KeyEvent.VK_A);
+		}
+		keyboard_conf.put("DOWN", KeyEvent.VK_S);
+		keyboard_conf.put("RIGHT", KeyEvent.VK_D);
 		
 		partieFinie = false;
 		debutPartie = true;
@@ -97,16 +116,16 @@ public class TetrisPuissance4Graphique extends JPanel implements KeyListener, Mo
 				repaint();
 				
 			}
-		} else if (!this.partiePreFinie && this.e.getJoueur() == this.joueur1 && e.getKeyCode() == KeyEvent.VK_Q) {
+		} else if (!this.partiePreFinie && this.e.getJoueur() == this.joueur1 && e.getKeyCode() == keyboard_conf.get("LEFT")) {
 			d.left();
 			repaint();
-		} else if (!this.partiePreFinie && this.e.getJoueur() == this.joueur1 && e.getKeyCode() == KeyEvent.VK_D) {
+		} else if (!this.partiePreFinie && this.e.getJoueur() == this.joueur1 && e.getKeyCode() == keyboard_conf.get("RIGHT")) {
 			d.right();
 			repaint();
-		} else if (!this.partiePreFinie && this.e.getJoueur() == this.joueur1 && e.getKeyCode() == KeyEvent.VK_Z) {
+		} else if (!this.partiePreFinie && this.e.getJoueur() == this.joueur1 && e.getKeyCode() == keyboard_conf.get("UP")) {
 			d.rotate();
 			repaint();
-		} else if (!this.partiePreFinie && this.e.getJoueur() == this.joueur1 && e.getKeyCode() ==  KeyEvent.VK_S) {
+		} else if (!this.partiePreFinie && this.e.getJoueur() == this.joueur1 && e.getKeyCode() ==  keyboard_conf.get("DOWN")) {
 			this.e.changeJoueur();
 			t.addForme(d.getForme());
 			d.newForme(s.firstForme());
@@ -142,19 +161,19 @@ public class TetrisPuissance4Graphique extends JPanel implements KeyListener, Mo
 			g.fillRect(0, 0, getWidth(), getHeight());
 			g.setColor(new Color(175,175,175));
 			g.setFont(new Font("Calibri", Font.BOLD, 20));
-			g.drawString("La partie va commencer.", 170, 100);
-			g.drawString("Le premier à jouer est le joueur " + e.getJoueur().getNom() + ".", 100, 200);
+			g.drawString("The game is going to start.", 150, 100);
+			g.drawString("The first player is " + e.getJoueur().getNom() + ".", 150, 200);
 			g.setFont(new Font("Calibri", Font.PLAIN, 16));
-			g.drawString(joueur1.getNom() + " est en jaune.", 40, 300);
-			g.drawString("Il joue avec les touches ZQSD.", 40, 350);
-			g.drawString(joueur2.getNom() + " est en rouge.", 295, 300);
-			g.drawString("Il joue avec les flèches.", 295, 350);
+			g.drawString(joueur1.getNom() + " is in yellow.", 40, 300);
+			g.drawString("He plays with the keys " + (keyboard_AZ?"ZQSD":"WASD") +  ".", 40, 350);
+			g.drawString(joueur2.getNom() + " is in red.", 295, 300);
+			g.drawString("He plays with the arrows.", 295, 350);
 			try {
 				Thread.sleep(1000);
 			} catch (Exception e) {}
 			g.setFont(new Font("Calibri", Font.BOLD, 20));
-			g.drawString("PRESSEZ N'IMPORTE QUELLE TOUCHE", 100, 430);
-			g.drawString("POUR CONTINUER", 200, 460);
+			g.drawString("PRESS ANY KEY", 200, 430);
+			g.drawString("TO CONTINUE", 200, 460);
 			
 		}
 	}

@@ -33,9 +33,9 @@ public class JPanelDemarrage extends JPanel implements ActionListener {
 		
 		this.setLayout(null);
 		
-		nouvellePartie = new Bouton("Nouvelle Partie", true);
-		continuer = new Bouton("Continuer", !premierePartie);
-		quitter = new Bouton("Quitter", true);
+		nouvellePartie = new Bouton("New Game", true);
+		continuer = new Bouton("Continue", !premierePartie);
+		quitter = new Bouton("Exit", true);
 		
 		this.add(nouvellePartie);
 		this.add(continuer);
@@ -60,7 +60,7 @@ public class JPanelDemarrage extends JPanel implements ActionListener {
 		g.setColor(Color.BLACK);
 		g.setFont(new Font("Calibri", Font.BOLD, 20));
 		if (premierePartie) {
-			g.drawString("NOUVELLE PARTIE", 180, 60);
+			g.drawString("NEW GAME", 220, 60);
 		} else {
 			g.drawString("SCORE", 240, 60);
 			g.drawString(joueur1.getNom() + " : " + getScore1() + " | " + getScore2() + " : " + joueur2.getNom(), 180, 90);

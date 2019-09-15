@@ -42,7 +42,7 @@ public class JPanelEtat extends JPanel {
 		g.fillRect(2, 2, getWidth()-4, getHeight()-4);
 		
 		g.setColor(Color.BLACK);
-		g.drawString("Tour de " + getJoueur().getNom(), 10, 50);
+		g.drawString(getJoueur().getNom() + " playing", 10, 50);
 		g.drawString(joueur1.getNom() + " \t\t\t\t\t " + joueur2.getNom(), 10, 125);
 		
 		g.setColor(new Color(150, 150, 0));
