@@ -1,3 +1,7 @@
+<h1>Tetris - Connect 4</h1>
+<div align="center">
+	<img src="Captures/Play.gif" alt="Quick play" title="Quick play" width="480" height="472"/>
+</div>
 <p>This game is a fusion of the "Connect 4" with "Tetris" shapes.
 2 players duel each other. Here, players have been named Pierre (yellow squares) and Paul (red squares). Each player, when it is his turn, places a randomly generated Tetris shape in a grid (width: 7 squares, height:6 squares).</p>
 <div align="center">
